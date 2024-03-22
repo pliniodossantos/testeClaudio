@@ -27,7 +27,7 @@ namespace testeClaudio
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
                 conexao.Open();
-                var strSql = "SELECT * FROM `movimentacao`";
+                var strSql = "SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` ";
                 var comando = new MySqlCommand(strSql, conexao);
                 var reader = comando.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -57,16 +57,12 @@ namespace testeClaudio
             dataFinal.Text = line.Cells[3].Value.ToString();
             idContainer.Text = line.Cells[4].Value.ToString();
             idCliente.Text = line.Cells[5].Value.ToString();
-
+            
 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DateTime MinhaDataInit = DateTime.Parse(dataInicio.Text);
-            dataInicio.Text = MinhaDataInit.ToString("yyyy-MM-dd hh:mm:ss");
-            DateTime MinhaDataFim = DateTime.Parse(dataFinal.Text);
-            dataFinal.Text = MinhaDataFim.ToString("yyyy-MM-dd hh:mm:ss");
 
             try
             {
@@ -113,6 +109,15 @@ namespace testeClaudio
 
         private void dataInicio_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            
+
+
 
         }
     }

@@ -43,13 +43,9 @@
             label6 = new Label();
             label7 = new Label();
             btnRegistrar = new Button();
-            diaInit = new TextBox();
-            mesInit = new TextBox();
-            anoInit = new TextBox();
-            diaEnd = new TextBox();
-            mesEnd = new TextBox();
-            anoEnd = new TextBox();
             linkLabel1 = new LinkLabel();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePickerFim = new DateTimePicker();
             SuspendLayout();
             // 
             // idConteiner
@@ -148,7 +144,7 @@
             // 
             // horaInit
             // 
-            horaInit.Location = new Point(399, 188);
+            horaInit.Location = new Point(417, 188);
             horaInit.Margin = new Padding(3, 4, 3, 4);
             horaInit.Mask = "90:00:00";
             horaInit.Name = "horaInit";
@@ -159,7 +155,7 @@
             // 
             // horaEnd
             // 
-            horaEnd.Location = new Point(646, 189);
+            horaEnd.Location = new Point(664, 188);
             horaEnd.Margin = new Padding(3, 4, 3, 4);
             horaEnd.Mask = "90:00:00";
             horaEnd.Name = "horaEnd";
@@ -197,60 +193,6 @@
             btnRegistrar.UseVisualStyleBackColor = true;
             btnRegistrar.Click += button1_Click;
             // 
-            // diaInit
-            // 
-            diaInit.Location = new Point(281, 188);
-            diaInit.MaxLength = 2;
-            diaInit.Name = "diaInit";
-            diaInit.Size = new Size(30, 27);
-            diaInit.TabIndex = 12;
-            diaInit.KeyPress += diaInit_KeyPress;
-            // 
-            // mesInit
-            // 
-            mesInit.Location = new Point(317, 188);
-            mesInit.MaxLength = 2;
-            mesInit.Name = "mesInit";
-            mesInit.Size = new Size(30, 27);
-            mesInit.TabIndex = 13;
-            mesInit.KeyPress += mesInit_KeyPress;
-            // 
-            // anoInit
-            // 
-            anoInit.Location = new Point(353, 188);
-            anoInit.MaxLength = 4;
-            anoInit.Name = "anoInit";
-            anoInit.Size = new Size(40, 27);
-            anoInit.TabIndex = 14;
-            anoInit.KeyPress += anoInit_KeyPress;
-            // 
-            // diaEnd
-            // 
-            diaEnd.Location = new Point(528, 189);
-            diaEnd.MaxLength = 2;
-            diaEnd.Name = "diaEnd";
-            diaEnd.Size = new Size(30, 27);
-            diaEnd.TabIndex = 16;
-            diaEnd.KeyPress += diaEnd_KeyPress;
-            // 
-            // mesEnd
-            // 
-            mesEnd.Location = new Point(564, 189);
-            mesEnd.MaxLength = 2;
-            mesEnd.Name = "mesEnd";
-            mesEnd.Size = new Size(30, 27);
-            mesEnd.TabIndex = 17;
-            mesEnd.KeyPress += mesEnd_KeyPress;
-            // 
-            // anoEnd
-            // 
-            anoEnd.Location = new Point(600, 189);
-            anoEnd.MaxLength = 4;
-            anoEnd.Name = "anoEnd";
-            anoEnd.Size = new Size(40, 27);
-            anoEnd.TabIndex = 18;
-            anoEnd.KeyPress += anoEnd_KeyPress;
-            // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
@@ -262,18 +204,32 @@
             linkLabel1.Text = "Editar ou Excluir Movimentação";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(281, 189);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(130, 27);
+            dateTimePicker1.TabIndex = 12;
+            // 
+            // dateTimePickerFim
+            // 
+            dateTimePickerFim.CustomFormat = "dd/MM/yyyy";
+            dateTimePickerFim.Format = DateTimePickerFormat.Custom;
+            dateTimePickerFim.Location = new Point(528, 188);
+            dateTimePickerFim.Name = "dateTimePickerFim";
+            dateTimePickerFim.Size = new Size(130, 27);
+            dateTimePickerFim.TabIndex = 16;
+            // 
             // movimentacoes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(dateTimePickerFim);
+            Controls.Add(dateTimePicker1);
             Controls.Add(linkLabel1);
-            Controls.Add(anoEnd);
-            Controls.Add(mesEnd);
-            Controls.Add(diaEnd);
-            Controls.Add(anoInit);
-            Controls.Add(mesInit);
-            Controls.Add(diaInit);
             Controls.Add(btnRegistrar);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -314,12 +270,8 @@
         private Label label6;
         private Label label7;
         private Button btnRegistrar;
-        private TextBox diaInit;
-        private TextBox mesInit;
-        private TextBox anoInit;
-        private TextBox diaEnd;
-        private TextBox mesEnd;
-        private TextBox anoEnd;
         private LinkLabel linkLabel1;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerFim;
     }
 }

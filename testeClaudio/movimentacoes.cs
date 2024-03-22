@@ -84,10 +84,11 @@ namespace testeClaudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DateTime dataI = dateTimePicker1.Value;
+            DateTime dataF = dateTimePickerFim.Value;
             var movimento = movimentacao.Text;
-            var dateInit = anoInit.Text + mesInit.Text + diaInit.Text + horaInit.Text.Replace(":", "");
-            var dateFim = anoEnd.Text + mesEnd.Text + diaEnd.Text + horaEnd.Text.Replace(":", "");
+            var dateInit = dataI.ToString("yyyy-MM-dd").Replace("-", "") + horaInit.Text.Replace(":", "");
+            var dateFim = dataF.ToString("yyyy-MM-dd").Replace("-", "") + horaEnd.Text.Replace(":", "");
             var idCont = idConteiner.Text;
             var idClien = idCliente.Text;
 
@@ -180,6 +181,15 @@ namespace testeClaudio
         {
             var goToForm = new editarOuExcluirMovimentacao();
             goToForm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+
+
+
+
         }
     }
 }

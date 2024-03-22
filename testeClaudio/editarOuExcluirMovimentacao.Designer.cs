@@ -51,65 +51,67 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 298);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(14, 397);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(643, 173);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(735, 231);
+            dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // idMovimentacao
             // 
-            idMovimentacao.Location = new Point(214, 86);
+            idMovimentacao.Location = new Point(245, 115);
+            idMovimentacao.Margin = new Padding(3, 4, 3, 4);
             idMovimentacao.Name = "idMovimentacao";
             idMovimentacao.ReadOnly = true;
-            idMovimentacao.Size = new Size(45, 23);
-            idMovimentacao.TabIndex = 1;
+            idMovimentacao.Size = new Size(51, 27);
+            idMovimentacao.TabIndex = 12;
             // 
             // idContainer
             // 
-            idContainer.Location = new Point(214, 130);
+            idContainer.Location = new Point(245, 173);
+            idContainer.Margin = new Padding(3, 4, 3, 4);
             idContainer.Name = "idContainer";
             idContainer.ReadOnly = true;
-            idContainer.Size = new Size(45, 23);
-            idContainer.TabIndex = 2;
+            idContainer.Size = new Size(51, 27);
+            idContainer.TabIndex = 13;
             // 
             // idCliente
             // 
-            idCliente.Location = new Point(214, 174);
+            idCliente.Location = new Point(245, 232);
+            idCliente.Margin = new Padding(3, 4, 3, 4);
             idCliente.Name = "idCliente";
             idCliente.ReadOnly = true;
-            idCliente.Size = new Size(45, 23);
-            idCliente.TabIndex = 3;
+            idCliente.Size = new Size(51, 27);
+            idCliente.TabIndex = 14;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(214, 68);
+            label1.Location = new Point(245, 91);
             label1.Name = "label1";
-            label1.Size = new Size(100, 15);
-            label1.TabIndex = 4;
+            label1.Size = new Size(125, 20);
+            label1.TabIndex = 0;
             label1.Text = "Id Movimentação";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(214, 112);
+            label2.Location = new Point(245, 149);
             label2.Name = "label2";
-            label2.Size = new Size(72, 15);
-            label2.TabIndex = 5;
+            label2.Size = new Size(90, 20);
+            label2.TabIndex = 1;
             label2.Text = "Id Conteiner";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(214, 156);
+            label3.Location = new Point(245, 208);
             label3.Name = "label3";
-            label3.Size = new Size(57, 15);
-            label3.TabIndex = 6;
+            label3.Size = new Size(72, 20);
+            label3.TabIndex = 2;
             label3.Text = "Id Cliente";
             // 
             // movimentacao
@@ -117,78 +119,84 @@
             movimentacao.DropDownStyle = ComboBoxStyle.DropDownList;
             movimentacao.FormattingEnabled = true;
             movimentacao.Items.AddRange(new object[] { "Embarque", "Descarga", "Gate In", "Gate Out", "Reposicionamento", "Pesagem", "Scanner" });
-            movimentacao.Location = new Point(317, 86);
+            movimentacao.Location = new Point(362, 115);
+            movimentacao.Margin = new Padding(3, 4, 3, 4);
             movimentacao.Name = "movimentacao";
-            movimentacao.Size = new Size(140, 23);
-            movimentacao.TabIndex = 7;
+            movimentacao.Size = new Size(159, 28);
+            movimentacao.TabIndex = 6;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(344, 68);
+            label4.Location = new Point(393, 91);
             label4.Name = "label4";
-            label4.Size = new Size(87, 15);
-            label4.TabIndex = 8;
+            label4.Size = new Size(108, 20);
+            label4.TabIndex = 3;
             label4.Text = "Movimentação";
             // 
             // dataInicio
             // 
-            dataInicio.Location = new Point(317, 130);
+            dataInicio.Location = new Point(362, 173);
+            dataInicio.Margin = new Padding(3, 4, 3, 4);
             dataInicio.Name = "dataInicio";
-            dataInicio.Size = new Size(140, 23);
-            dataInicio.TabIndex = 9;
+            dataInicio.Size = new Size(159, 27);
+            dataInicio.TabIndex = 7;
+            dataInicio.TextChanged += dataInicio_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(344, 112);
+            label5.Location = new Point(393, 149);
             label5.Name = "label5";
-            label5.Size = new Size(63, 15);
-            label5.TabIndex = 10;
+            label5.Size = new Size(81, 20);
+            label5.TabIndex = 4;
             label5.Text = "Data Início";
             // 
             // dataFinal
             // 
-            dataFinal.Location = new Point(317, 174);
+            dataFinal.Location = new Point(362, 232);
+            dataFinal.Margin = new Padding(3, 4, 3, 4);
             dataFinal.Name = "dataFinal";
-            dataFinal.Size = new Size(140, 23);
-            dataFinal.TabIndex = 11;
+            dataFinal.Size = new Size(159, 27);
+            dataFinal.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(344, 156);
+            label6.Location = new Point(393, 208);
             label6.Name = "label6";
-            label6.Size = new Size(54, 15);
-            label6.TabIndex = 12;
+            label6.Size = new Size(69, 20);
+            label6.TabIndex = 5;
             label6.Text = "Data Fim";
             label6.Click += label6_Click;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(214, 203);
+            btnEdit.Location = new Point(245, 271);
+            btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(243, 23);
-            btnEdit.TabIndex = 13;
+            btnEdit.Size = new Size(278, 31);
+            btnEdit.TabIndex = 9;
             btnEdit.Text = "Confirmar Edição";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(214, 232);
+            btnExcluir.Location = new Point(245, 309);
+            btnExcluir.Margin = new Padding(3, 4, 3, 4);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(243, 23);
-            btnExcluir.TabIndex = 14;
+            btnExcluir.Size = new Size(278, 31);
+            btnExcluir.TabIndex = 10;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // editarOuExcluirMovimentacao
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(674, 520);
+            ClientSize = new Size(770, 693);
             Controls.Add(btnExcluir);
             Controls.Add(btnEdit);
             Controls.Add(label6);
@@ -204,7 +212,6 @@
             Controls.Add(idContainer);
             Controls.Add(idMovimentacao);
             Controls.Add(dataGridView1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "editarOuExcluirMovimentacao";
             Text = "editarOuExcluirMovimentacao";
             Load += editarOuExcluirMovimentacao_Load;

@@ -107,6 +107,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(763, 211);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label3
             // 

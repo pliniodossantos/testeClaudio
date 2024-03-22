@@ -31,7 +31,7 @@ namespace testeClaudio
 
                 while (reader.Read())
                 {
-                    totalImportacao.Text =$"{reader["COUNT(*)"]}";
+                    totalImportacao.Text = $"{reader["COUNT(*)"]}";
 
                 }
                 conexao.Close();
@@ -113,6 +113,11 @@ namespace testeClaudio
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

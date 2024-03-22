@@ -37,3 +37,4 @@ C:\Users\pln\Desktop\dev\testeClaudio\testeClaudio\testeClaudio\obj\Debug\net8.0
 C:\Users\pln\Desktop\dev\testeClaudio\testeClaudio\testeClaudio\obj\Debug\net8.0-windows\testeClaudio.movimentacoes.resources
 C:\Users\pln\Desktop\dev\testeClaudio\testeClaudio\testeClaudio\obj\Debug\net8.0-windows\testeClaudio.editarOuExcluirMovimentacao.resources
 C:\Users\pln\Desktop\dev\testeClaudio\testeClaudio\testeClaudio\obj\Debug\net8.0-windows\testeClaudio.relatorio.resources
+C:\Users\pln\Desktop\dev\testeClaudio\testeClaudio\testeClaudio\obj\Debug\net8.0-windows\testeClaudio.sourcelink.json

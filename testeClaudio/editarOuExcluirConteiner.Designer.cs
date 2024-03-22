@@ -55,7 +55,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(727, 200);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.TabIndex = 14;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -65,7 +65,7 @@
             label5.Location = new Point(678, 67);
             label5.Name = "label5";
             label5.Size = new Size(74, 20);
-            label5.TabIndex = 24;
+            label5.TabIndex = 5;
             label5.Text = "Categoria";
             // 
             // label4
@@ -74,7 +74,7 @@
             label4.Location = new Point(579, 67);
             label4.Name = "label4";
             label4.Size = new Size(49, 20);
-            label4.TabIndex = 23;
+            label4.TabIndex = 4;
             label4.Text = "Status";
             // 
             // label3
@@ -83,7 +83,7 @@
             label3.Location = new Point(475, 67);
             label3.Name = "label3";
             label3.Size = new Size(39, 20);
-            label3.TabIndex = 22;
+            label3.TabIndex = 3;
             label3.Text = "Tipo";
             // 
             // label2
@@ -92,7 +92,7 @@
             label2.Location = new Point(307, 67);
             label2.Name = "label2";
             label2.Size = new Size(126, 20);
-            label2.TabIndex = 21;
+            label2.TabIndex = 2;
             label2.Text = "Código Conteiner";
             label2.Click += label2_Click;
             // 
@@ -103,7 +103,7 @@
             label1.Location = new Point(206, 67);
             label1.Name = "label1";
             label1.Size = new Size(72, 20);
-            label1.TabIndex = 20;
+            label1.TabIndex = 1;
             label1.Text = "Id Cliente";
             // 
             // categoria
@@ -114,7 +114,7 @@
             categoria.Location = new Point(665, 91);
             categoria.Name = "categoria";
             categoria.Size = new Size(106, 28);
-            categoria.TabIndex = 19;
+            categoria.TabIndex = 11;
             // 
             // status
             // 
@@ -124,7 +124,7 @@
             status.Location = new Point(562, 91);
             status.Name = "status";
             status.Size = new Size(79, 28);
-            status.TabIndex = 18;
+            status.TabIndex = 10;
             // 
             // tipo
             // 
@@ -135,7 +135,7 @@
             tipo.Location = new Point(457, 89);
             tipo.Name = "tipo";
             tipo.Size = new Size(79, 28);
-            tipo.TabIndex = 17;
+            tipo.TabIndex = 9;
             // 
             // letrasConteiner
             // 
@@ -143,7 +143,7 @@
             letrasConteiner.MaxLength = 11;
             letrasConteiner.Name = "letrasConteiner";
             letrasConteiner.Size = new Size(132, 27);
-            letrasConteiner.TabIndex = 14;
+            letrasConteiner.TabIndex = 8;
             // 
             // idcliente
             // 
@@ -152,7 +152,7 @@
             idcliente.Name = "idcliente";
             idcliente.ReadOnly = true;
             idcliente.Size = new Size(79, 27);
-            idcliente.TabIndex = 25;
+            idcliente.TabIndex = 7;
             // 
             // idConteiner
             // 
@@ -161,7 +161,7 @@
             idConteiner.Name = "idConteiner";
             idConteiner.ReadOnly = true;
             idConteiner.Size = new Size(81, 27);
-            idConteiner.TabIndex = 26;
+            idConteiner.TabIndex = 6;
             // 
             // label6
             // 
@@ -169,7 +169,7 @@
             label6.Location = new Point(103, 67);
             label6.Name = "label6";
             label6.Size = new Size(90, 20);
-            label6.TabIndex = 27;
+            label6.TabIndex = 0;
             label6.Text = "Id Conteiner";
             // 
             // btnEdit
@@ -178,7 +178,7 @@
             btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(183, 31);
-            btnEdit.TabIndex = 28;
+            btnEdit.TabIndex = 12;
             btnEdit.Text = "Confirmar Edição";
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += button1_Click;
@@ -189,7 +189,7 @@
             btnExc.Margin = new Padding(3, 4, 3, 4);
             btnExc.Name = "btnExc";
             btnExc.Size = new Size(183, 31);
-            btnExc.TabIndex = 29;
+            btnExc.TabIndex = 13;
             btnExc.Text = "Excluir";
             btnExc.UseVisualStyleBackColor = true;
             btnExc.Click += btnExc_Click;

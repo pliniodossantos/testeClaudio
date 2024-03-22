@@ -40,7 +40,7 @@
             clientes.Location = new Point(78, 55);
             clientes.Margin = new Padding(3, 4, 3, 4);
             clientes.Name = "clientes";
-            clientes.Size = new Size(702, 79);
+            clientes.Size = new Size(609, 79);
             clientes.TabIndex = 0;
             clientes.Text = "Clientes";
             clientes.UseVisualStyleBackColor = true;
@@ -52,7 +52,7 @@
             conteiner.Location = new Point(78, 167);
             conteiner.Margin = new Padding(3, 4, 3, 4);
             conteiner.Name = "conteiner";
-            conteiner.Size = new Size(702, 79);
+            conteiner.Size = new Size(609, 79);
             conteiner.TabIndex = 1;
             conteiner.Text = "Registar Contêiner";
             conteiner.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             movimento.Location = new Point(78, 284);
             movimento.Margin = new Padding(3, 4, 3, 4);
             movimento.Name = "movimento";
-            movimento.Size = new Size(702, 79);
+            movimento.Size = new Size(609, 79);
             movimento.TabIndex = 2;
             movimento.Text = "Movimentações";
             movimento.UseVisualStyleBackColor = true;
@@ -75,7 +75,7 @@
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             button1.Location = new Point(78, 392);
             button1.Name = "button1";
-            button1.Size = new Size(702, 79);
+            button1.Size = new Size(609, 79);
             button1.TabIndex = 3;
             button1.Text = "Relatório";
             button1.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(860, 863);
+            ClientSize = new Size(767, 863);
             Controls.Add(button1);
             Controls.Add(movimento);
             Controls.Add(conteiner);

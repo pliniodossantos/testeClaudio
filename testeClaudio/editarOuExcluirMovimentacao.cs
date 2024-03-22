@@ -110,5 +110,10 @@ namespace testeClaudio
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dataInicio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

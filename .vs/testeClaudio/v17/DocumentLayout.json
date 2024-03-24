@@ -1,36 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|c:\\users\\pln\\desktop\\dev\\testeclaudio\\testeclaudio\\testeclaudio\\movimentacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|solutionrelative:testeclaudio\\movimentacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "movimentacoes.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\movimentacoes.cs",
-              "RelativeDocumentMoniker": "testeClaudio\\movimentacoes.cs",
-              "ToolTip": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\movimentacoes.cs [Design]",
-              "RelativeToolTip": "testeClaudio\\movimentacoes.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T22:40:20.97Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

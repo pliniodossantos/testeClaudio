@@ -88,6 +88,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(379, 27);
             textBox2.TabIndex = 3;
+            textBox2.KeyPress += textBox2_KeyPress;
             // 
             // label3
             // 

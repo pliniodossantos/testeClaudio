@@ -1,24 +1,20 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace testeClaudio
+namespace testeClaudio.controlers
 {
-    public partial class relatorio : Form
+    internal class relatorioControler
     {
-        public relatorio()
-        {
-            InitializeComponent();
-        }
+        private static object recebeId;
 
-        private void relatorio_Load(object sender, EventArgs e)
+        public static void ContarImportação(TextBox totalImportacao)
         {
             try
             {
@@ -41,6 +37,9 @@ namespace testeClaudio
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        public static void ContarExportação(TextBox totalExportacao)
+        {
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
@@ -62,6 +61,9 @@ namespace testeClaudio
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        public static void SelecionarClientesEId(ComboBox cliente)
+        {
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
@@ -83,23 +85,15 @@ namespace testeClaudio
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-
-        private void cliente_DropDownClosed(object sender, EventArgs e)
+        public static void RetornarInfoGrid(DataGridView dataGridView1, string movimentacao, string receberArrayId)
         {
-
-        }
-
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            string[] recebeId = cliente.Text.Split('/');
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
                 conexao.Open();
-                var strSql = $"SELECT * FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimento.Text}' AND `idCliente` = {recebeId[1]}";
+                var strSql = $"SELECT * FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimentacao}' AND `idCliente` = {receberArrayId}";
                 var comando = new MySqlCommand(strSql, conexao);
                 var reader = comando.ExecuteReader();
                 DataTable dt = new DataTable();
@@ -113,12 +107,7 @@ namespace testeClaudio
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

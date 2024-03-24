@@ -1,25 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace testeClaudio
+namespace testeClaudio.controlers
 {
-    public partial class editarOuExcluir : Form
+    internal class clientesControler
     {
-        public editarOuExcluir()
-        {
-            InitializeComponent();
-        }
-
-        private void editarOuExcluir_Load(object sender, EventArgs e)
-        {
+        public static void ListaDeClientes(DataGridView dataGrid) {
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
@@ -30,54 +22,45 @@ namespace testeClaudio
                 var reader = comando.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
-                dataGridView1.DataSource = dt;
-
+                dataGrid.DataSource = dt;
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow line = dataGridView1.Rows[e.RowIndex];
-            txtId.Text = line.Cells[0].Value.ToString();
-            txtCliente.Text = line.Cells[1].Value.ToString();
-            txtCpf.Text = line.Cells[2].Value.ToString();
-            txtUf.Text = line.Cells[3].Value.ToString();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow line = dataGridView1.Rows[e.RowIndex];
-            txtId.Text = line.Cells[0].Value.ToString();
-            txtCliente.Text = line.Cells[1].Value.ToString();
-            txtCpf.Text = line.Cells[2].Value.ToString();
-            txtUf.Text = line.Cells[3].Value.ToString();
-
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        public static void AddCliente(string nomeCliente, string cpfCliente, string ufCliente)
         {
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
-                var strSql = $"DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = {txtId.Text}";
+                var strSql = $"INSERT INTO clientes (cliente, cpf, uf) values ('{nomeCliente}', '{cpfCliente}', '{ufCliente}')";
                 var comando = new MySqlCommand(strSql, conexao);
                 conexao.Open();
                 comando.ExecuteNonQuery();
                 conexao.Close();
-                this.Close();
+                MessageBox.Show("Cliente Adicionado");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public static void DeleteCliente(string id)
+        {
+            try
+            {
+                var strConexao = "server=localhost;uid=root;database=testeclaudio";
+                var conexao = new MySqlConnection(strConexao);
+                var strSql = $"DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = {id}";
+                var comando = new MySqlCommand(strSql, conexao);
+                conexao.Open();
+                comando.ExecuteNonQuery();
+                conexao.Close();
                 MessageBox.Show("Cliente excluido");
 
             }
@@ -86,19 +69,16 @@ namespace testeClaudio
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void editar_Click(object sender, EventArgs e)
-        {
+        public static void EditarCliente(string id, string cliente, string cpf, string uf) {
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
-                var strSql = $"UPDATE `clientes` SET `cliente` = '{txtCliente.Text}', `cpf` = '{txtCpf.Text}', `uf` = '{txtUf.Text}' WHERE `clientes`.`id_cliente` = {txtId.Text}";
+                var strSql = $"UPDATE `clientes` SET `cliente` = '{cliente}', `cpf` = '{cpf}', `uf` = '{uf}' WHERE `clientes`.`id_cliente` = {id}";
                 var comando = new MySqlCommand(strSql, conexao);
                 conexao.Open();
                 comando.ExecuteNonQuery();
                 conexao.Close();
-                this.Close();
                 MessageBox.Show("Edição Concluída");
 
             }
@@ -107,6 +87,6 @@ namespace testeClaudio
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }
-

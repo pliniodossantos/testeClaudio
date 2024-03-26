@@ -21,7 +21,8 @@ namespace testeClaudio
 
         private void editarOuExcluir_Load(object sender, EventArgs e)
         {
-            controlers.clientesControler.ListaDeClientes(dataGridView1);
+            var lista = controlers.clientesControler.ListarClientes();
+            dataGridView1.DataSource = lista;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -18,7 +18,11 @@ namespace testeClaudio
         {
             InitializeComponent();
 
-            controlers.conteinerControler.RetornarIdCliente(idCliente);
+            var ids = controlers.conteinerControler.ListarIdClientes();
+            foreach (var item in ids)
+            {
+               idCliente.Items.Add(item.id_cliente.ToString());
+            }
 
         }
 
@@ -49,8 +53,9 @@ namespace testeClaudio
 
         private void idCliente_DropDownClosed(object sender, EventArgs e)
         {
-            string id_Cliente = idCliente.Text;
-            controlers.conteinerControler.InserirClientePorId(id_Cliente, nomeCliente);   
+            string id_Cliente = idCliente.Text;  
+            var cliente = controlers.conteinerControler.RecebeClientePorId(id_Cliente);
+            nomeCliente.Text = cliente.cliente.ToString();
         }
 
         private void registrar_Click(object sender, EventArgs e)

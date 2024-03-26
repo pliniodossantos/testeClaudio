@@ -20,9 +20,13 @@ namespace testeClaudio
 
         private void relatorio_Load(object sender, EventArgs e)
         {
-            controlers.relatorioControler.ContarImportação(totalImportacao);
-            controlers.relatorioControler.ContarExportação(totalExportacao);
-            controlers.relatorioControler.SelecionarClientesEId(cliente);
+            totalImportacao.Text = controlers.relatorioControler.CountImportacao().ToString();
+            totalExportacao.Text = controlers.relatorioControler.CountExportacao().ToString();
+            var lista = controlers.relatorioControler.SelecClienteEId();
+            foreach (var item in lista)
+            {
+                cliente.Items.Add(item.cliente+"/"+item.id_cliente);
+            }      
 
         }
 
@@ -34,7 +38,9 @@ namespace testeClaudio
             string[] recebeId = cliente.Text.Split('/');
             string  receberArrayId = recebeId[1];
             string movimentacao = movimento.Text;
-            controlers.relatorioControler.RetornarInfoGrid(dataGridView1, movimentacao, receberArrayId);
+            var lista = controlers.relatorioControler.RetornarInfoGrid(movimentacao, receberArrayId);
+            dataGridView1.DataSource = lista;
+            
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

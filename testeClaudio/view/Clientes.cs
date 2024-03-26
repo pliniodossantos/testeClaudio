@@ -24,13 +24,14 @@ namespace testeClaudio
         }
 
         private void listadeclientes_Click(object sender, EventArgs e)
-        {}
+        { }
         private void dataGridListaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {}
+        { }
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            controlers.clientesControler.ListaDeClientes(dataGridListaClientes);
+            var lista = controlers.clientesControler.ListarClientes();
+            dataGridListaClientes.DataSource = lista;
         }
 
         private void label1_Click_1(object sender, EventArgs e)

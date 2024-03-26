@@ -25,7 +25,7 @@ namespace testeClaudio
             string nomeCliente = textBox1.Text;
             string cpfCliente = textBox2.Text;
             string ufCliente = textBox3.Text;
-            controlers.clientesControler.AddCliente(nomeCliente, cpfCliente, ufCliente);
+            controlers.clientesControler.AddClinete(nomeCliente, cpfCliente, ufCliente);
             this.Close();
         }
 

@@ -22,12 +22,22 @@ namespace testeClaudio
         private void idConteiner_DropDownClosed(object sender, EventArgs e)
         {
             string id_Conteiner  = idConteiner.Text;
-            controlers.movimentacaoControler.RetornaInfosPorId(id_Conteiner, codConteiner, idCliente, cliente);
+            var recebe = controlers.movimentacaoControler.RetornarDadosPorId(id_Conteiner);
+            codConteiner.Text = recebe.Item1.codigoConteiner;
+            idCliente.Text = recebe.Item1.id_cliente.ToString();
+            cliente.Text = recebe.Item2.cliente;
+           
+            
         }
 
         private void movimentacoes_Load(object sender, EventArgs e)
         {
-            controlers.movimentacaoControler.RetornarIdConteiner(idConteiner);
+            
+            var ids = controlers.movimentacaoControler.RetornaIdConteiner();
+            foreach (var item in ids)
+            {
+                idConteiner.Items.Add(item.id_conteiner.ToString());
+            }
         }
 
 

@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testeClaudio.model;
 
 namespace testeClaudio.controlers
 {
     internal class relatorioControler
     {
-        private static object recebeId;
-
-        public static void ContarImportação(TextBox totalImportacao)
+        public static int CountImportacao()
         {
+            int contagem = 0;
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
@@ -27,7 +27,7 @@ namespace testeClaudio.controlers
 
                 while (reader.Read())
                 {
-                    totalImportacao.Text = $"{reader["COUNT(*)"]}";
+                    contagem = reader.GetInt32(0);
 
                 }
                 conexao.Close();
@@ -37,21 +37,24 @@ namespace testeClaudio.controlers
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return contagem;
         }
-        public static void ContarExportação(TextBox totalExportacao)
+        public static int CountExportacao()
         {
+            int contagem = 0;
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
                 conexao.Open();
-                var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Exportação'";
+                var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Exportacao'";
                 var comando = new MySqlCommand(strSql, conexao);
                 var reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    totalExportacao.Text = $"{reader["COUNT(*)"]}";
+                    contagem = reader.GetInt32(0);
 
                 }
                 conexao.Close();
@@ -61,9 +64,12 @@ namespace testeClaudio.controlers
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return contagem;
         }
-        public static void SelecionarClientesEId(ComboBox cliente)
+        public static List<Cliente> SelecClienteEId()
         {
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
@@ -75,7 +81,11 @@ namespace testeClaudio.controlers
 
                 while (reader.Read())
                 {
-                    cliente.Items.Add(($"{reader["cliente"]}" + "/" + $"{reader["id_cliente"]}"));
+                    lista.Add(new Cliente
+                    {
+                        id_cliente = reader.GetInt32(0),
+                        cliente = reader.GetString(1)
+                    });
 
                 }
                 conexao.Close();
@@ -85,21 +95,34 @@ namespace testeClaudio.controlers
             {
                 MessageBox.Show(ex.Message);
             }
+            return lista;
         }
-        public static void RetornarInfoGrid(DataGridView dataGridView1, string movimentacao, string receberArrayId)
+
+        public static List<Movimentacao>RetornarInfoGrid(string movimentacao, string receberArrayId)
         {
+            List<Movimentacao> listaRetorno = new List<Movimentacao>();
             try
             {
                 var strConexao = "server=localhost;uid=root;database=testeclaudio";
                 var conexao = new MySqlConnection(strConexao);
                 conexao.Open();
-                var strSql = $"SELECT * FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimentacao}' AND `idCliente` = {receberArrayId}";
+                var strSql = $"SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimentacao}' AND `idCliente` = {receberArrayId}";
                 var comando = new MySqlCommand(strSql, conexao);
                 var reader = comando.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(reader);
-                dataGridView1.DataSource = dt;
 
+                while (reader.Read())
+                {
+                    listaRetorno.Add(new Movimentacao
+                    {
+                        id = reader.GetInt32(0),
+                        tipoMovimentacao = reader.GetString(1),
+                        dataInicio = reader.GetString(2),
+                        dataFim = reader.GetString(3),
+                        idConteiner = reader.GetInt32(4),
+                        idCliente = reader.GetInt32(5)
+                    });;
+
+                }
 
                 conexao.Close();
             }
@@ -107,6 +130,7 @@ namespace testeClaudio.controlers
             {
                 MessageBox.Show(ex.Message);
             }
+            return listaRetorno;
         }
 
     }

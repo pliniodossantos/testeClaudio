@@ -22,7 +22,9 @@ namespace testeClaudio
 
         private void editarOuExcluirMovimentacao_Load(object sender, EventArgs e)
         {
-            controlers.movimentacaoControler.ListarMovimentacao(dataGridView1);
+            
+            var lista = controlers.movimentacaoControler.ListaMovimentacao();
+            dataGridView1.DataSource = lista;
         }
 
         private void label6_Click(object sender, EventArgs e)

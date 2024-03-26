@@ -19,7 +19,8 @@ namespace testeClaudio
         }
         private void editarOuExcluirConteiner_Load(object sender, EventArgs e)
         {
-            controlers.conteinerControler.ListarConteiner(dataGridView1);
+            var listaConteiners = controlers.conteinerControler.ListarConteiners();
+            dataGridView1.DataSource = listaConteiners;
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

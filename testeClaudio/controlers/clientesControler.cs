@@ -15,15 +15,12 @@ namespace testeClaudio.controlers
 
         public static List<Cliente> ListarClientes() {
             List<Cliente> listar = new List<Cliente>();
-
+            string strSql = "SELECT * FROM `clientes`";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT * FROM `clientes`";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     listar.Add(new Cliente
@@ -45,21 +42,16 @@ namespace testeClaudio.controlers
             return listar;
 
         }
-        public static void AddClinete(string nomeCliente, string cpfCliente, string ufCliente)
+        public static void AddCliente(string nomeCliente, string cpfCliente, string ufCliente)
         {
             Cliente cliente = new Cliente();
             cliente.cliente = nomeCliente;
             cliente.cpf = cpfCliente;
             cliente.uf = ufCliente;
+            var strSql = $"INSERT INTO clientes (cliente, cpf, uf) values ('{cliente.cliente}', '{cliente.cpf}', '{cliente.uf}')";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"INSERT INTO clientes (cliente, cpf, uf) values ('{cliente.cliente}', '{cliente.cpf}', '{cliente.uf}')";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Cliente Adicionado");
 
             }
@@ -72,15 +64,10 @@ namespace testeClaudio.controlers
         {
             Cliente cliente = new Cliente();
             cliente.id_cliente = int.Parse(id);
+            var strSql = $"DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"DELETE FROM `clientes` WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Cliente excluido");
 
             }
@@ -95,15 +82,10 @@ namespace testeClaudio.controlers
             cliente.cliente = client;
             cliente.cpf = cpf;
             cliente.uf = uf;
+            var strSql = $"UPDATE `clientes` SET `cliente` = '{cliente.cliente}', `cpf` = '{cliente.cpf}', `uf` = '{cliente.uf}' WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"UPDATE `clientes` SET `cliente` = '{cliente.cliente}', `cpf` = '{cliente.cpf}', `uf` = '{cliente.uf}' WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Edição Concluída");
 
             }

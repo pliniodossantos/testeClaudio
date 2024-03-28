@@ -16,69 +16,54 @@ namespace testeClaudio.controlers
         public static int CountImportacao()
         {
             int contagem = 0;
+            var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Importação'";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Importação'";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     contagem = reader.GetInt32(0);
-
                 }
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
             return contagem;
         }
         public static int CountExportacao()
         {
             int contagem = 0;
+            var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Exportacao'";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT COUNT(*) FROM conteiner WHERE categoria = 'Exportacao'";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     contagem = reader.GetInt32(0);
-
                 }
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
             return contagem;
         }
         public static List<Cliente> SelecClienteEId()
         {
             List<Cliente> lista = new List<Cliente>();
+            var strSql = "SELECT `id_cliente`, `cliente` FROM `clientes`";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT `id_cliente`, `cliente` FROM `clientes`";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     lista.Add(new Cliente
@@ -101,15 +86,11 @@ namespace testeClaudio.controlers
         public static List<Movimentacao>RetornarInfoGrid(string movimentacao, string receberArrayId)
         {
             List<Movimentacao> listaRetorno = new List<Movimentacao>();
+            var strSql = $"SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimentacao}' AND `idCliente` = {receberArrayId}";
             try
-            {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = $"SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` WHERE `tipoMovimentacao` LIKE '{movimentacao}' AND `idCliente` = {receberArrayId}";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+            {   var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     listaRetorno.Add(new Movimentacao
@@ -132,6 +113,5 @@ namespace testeClaudio.controlers
             }
             return listaRetorno;
         }
-
     }
 }

@@ -107,6 +107,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(69, 27);
             textBox3.TabIndex = 4;
+            textBox3.KeyPress += textBox3_KeyPress;
             // 
             // label4
             // 

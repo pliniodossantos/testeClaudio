@@ -16,15 +16,13 @@ namespace testeClaudio.controlers
         public static List<Cliente> ListarIdClientes()
         {
             List<Cliente> listarId = new List<Cliente>();
+            var strSql = "SELECT `id_cliente` FROM `clientes`";
 
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT `id_cliente` FROM `clientes`";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     listarId.Add(new Cliente
@@ -47,16 +45,12 @@ namespace testeClaudio.controlers
         {
             Cliente cliente = new Cliente();
             cliente.id_cliente = int.Parse(id_Cliente);
+            var strSql = $"SELECT `cliente` FROM `clientes` WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = $"SELECT `cliente` FROM `clientes` WHERE `clientes`.`id_cliente` = {cliente.id_cliente}";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     cliente.cliente = ($"{reader["cliente"]}");
@@ -78,16 +72,10 @@ namespace testeClaudio.controlers
             conteiner.estado = stat;
             conteiner.categoria = categori;
             conteiner.id_cliente = int.Parse(id_Cliente);
+            var strSql = $"INSERT INTO `conteiner` (`codigoConteiner`, `tipo`, `estado`, `categoria`, `id_cliente`) VALUES ( '{conteiner.codigoConteiner}', '{conteiner.tipo}', '{conteiner.estado}', '{conteiner.categoria}', '{conteiner.id_cliente}')";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"INSERT INTO `conteiner` (`codigoConteiner`, `tipo`, `estado`, `categoria`, `id_cliente`) VALUES ( '{conteiner.codigoConteiner}', '{conteiner.tipo}', '{conteiner.estado}', '{conteiner.categoria}', '{conteiner.id_cliente}')";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
-                
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Conteiner Adicionado");
             }
             catch (Exception ex)
@@ -99,15 +87,12 @@ namespace testeClaudio.controlers
         public static List<Conteiner> ListarConteiners()
         {
             List<Conteiner> listaConteiner = new List<Conteiner>();
+            var strSql = "SELECT * FROM `conteiner`";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT * FROM `conteiner`";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     listaConteiner.Add(new Conteiner
@@ -138,16 +123,12 @@ namespace testeClaudio.controlers
             conteiner.estado = estado;
             conteiner.categoria = category;
             conteiner.id_conteiner = int.Parse(id_Conteiner);
+            var strSql = $"UPDATE `conteiner` SET `codigoConteiner` = '{conteiner.codigoConteiner}', `tipo` = '{conteiner.tipo}', `estado` = '{conteiner.estado}', `categoria` = '{conteiner.categoria}' WHERE `conteiner`.`id_conteiner` = '{conteiner.id_conteiner}'";
+
 
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"UPDATE `conteiner` SET `codigoConteiner` = '{conteiner.codigoConteiner}', `tipo` = '{conteiner.tipo}', `estado` = '{conteiner.estado}', `categoria` = '{conteiner.categoria}' WHERE `conteiner`.`id_conteiner` = '{conteiner.id_conteiner}'";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();  
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Edição Concluída");
             }
             catch (Exception ex)
@@ -159,15 +140,10 @@ namespace testeClaudio.controlers
         {
             Conteiner conteiner = new Conteiner();
             conteiner.id_conteiner = int.Parse(id_Conteiner);
+            var strSql = $"DELETE FROM conteiner WHERE `conteiner`.`id_conteiner` = {conteiner.id_conteiner}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"DELETE FROM conteiner WHERE `conteiner`.`id_conteiner` = {conteiner.id_conteiner}";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Conteiner excluido");
             }
             catch (Exception ex)

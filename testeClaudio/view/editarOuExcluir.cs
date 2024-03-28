@@ -44,8 +44,8 @@ namespace testeClaudio
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {}
-        
+        { }
+
         private void button2_Click(object sender, EventArgs e)
         {
             string id = txtId.Text;
@@ -64,6 +64,17 @@ namespace testeClaudio
             string uf = txtUf.Text;
             controlers.clientesControler.EditarCliente(id, cliente, cpf, uf);
             this.Close();
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            controlers.auxControler.OnlyNumbers(sender, e);
+        }
+
+        private void txtUf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            controlers.auxControler.OnliLetters(sender, e);
+            
         }
     }
 }

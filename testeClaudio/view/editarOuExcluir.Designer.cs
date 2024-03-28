@@ -94,6 +94,7 @@
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(199, 27);
             txtCpf.TabIndex = 4;
+            txtCpf.KeyPress += txtCpf_KeyPress;
             // 
             // txtUf
             // 
@@ -103,6 +104,7 @@
             txtUf.Name = "txtUf";
             txtUf.Size = new Size(55, 27);
             txtUf.TabIndex = 5;
+            txtUf.KeyPress += txtUf_KeyPress;
             // 
             // editar
             // 

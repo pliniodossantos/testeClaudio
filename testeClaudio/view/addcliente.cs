@@ -25,17 +25,18 @@ namespace testeClaudio
             string nomeCliente = textBox1.Text;
             string cpfCliente = textBox2.Text;
             string ufCliente = textBox3.Text;
-            controlers.clientesControler.AddClinete(nomeCliente, cpfCliente, ufCliente);
+            controlers.clientesControler.AddCliente(nomeCliente, cpfCliente, ufCliente);
             this.Close();
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-    (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            controlers.auxControler.OnlyNumbers(sender,e);
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            controlers.auxControler.OnliLetters(sender, e);
         }
     }
 }

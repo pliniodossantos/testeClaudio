@@ -18,16 +18,12 @@ namespace testeClaudio.controlers
         {
             Conteiner conteiner = new Conteiner();
             Cliente cliente = new Cliente();
-
+            var strSql = $"SELECT conteiner.codigoConteiner, conteiner.id_cliente, clientes.cliente FROM conteiner JOIN clientes on clientes.id_cliente = conteiner.id_cliente WHERE conteiner.id_conteiner = {id_conteiner}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = $"SELECT conteiner.codigoConteiner, conteiner.id_cliente, clientes.cliente FROM conteiner JOIN clientes on clientes.id_cliente = conteiner.id_cliente WHERE conteiner.id_conteiner = {id_conteiner}";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     conteiner.codigoConteiner = reader.GetString(0);
@@ -40,22 +36,17 @@ namespace testeClaudio.controlers
             {
                 MessageBox.Show(ex.Message);
             }
-
-
             return (conteiner, cliente);
         }
         public static List<Conteiner> RetornaIdConteiner()
         {
             List<Conteiner> listaIdConteiner = new List<Conteiner>();
-
+            var strSql = "SELECT `id_conteiner` FROM `conteiner` ORDER BY `id_conteiner` ASC";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var comando = new MySqlCommand("SELECT `id_conteiner` FROM `conteiner` ORDER BY `id_conteiner` ASC", conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     listaIdConteiner.Add(new Conteiner
@@ -83,16 +74,11 @@ namespace testeClaudio.controlers
             registrarMovimento.dataFim = dateFim;
             registrarMovimento.idConteiner = int.Parse(idCont);
             registrarMovimento.idCliente = int.Parse(idClien);
+            var strSql = $"INSERT INTO `movimentacao` (`tipoMovimentacao`, `dataInicio`, `dataFim`, `idConteiner`, `idCliente`) VALUES ('{registrarMovimento.tipoMovimentacao}', '{registrarMovimento.dataInicio}', '{registrarMovimento.dataFim}', '{registrarMovimento.idConteiner}', '{registrarMovimento.idCliente}')";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"INSERT INTO `movimentacao` (`tipoMovimentacao`, `dataInicio`, `dataFim`, `idConteiner`, `idCliente`) VALUES ('{registrarMovimento.tipoMovimentacao}', '{registrarMovimento.dataInicio}', '{registrarMovimento.dataFim}', '{registrarMovimento.idConteiner}', '{registrarMovimento.idCliente}')";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
-                MessageBox.Show("Movimentação Adicionado");
+                controlers.auxControler.EscreverDb(strSql);
+                MessageBox.Show("Movimentação Adicionada");
 
             }
             catch (Exception ex)
@@ -103,16 +89,12 @@ namespace testeClaudio.controlers
 
         public static List<Movimentacao> ListaMovimentacao(){
             List<Movimentacao> movimento = new List<Movimentacao>();
-
+            var strSql = "SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` ";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                conexao.Open();
-                var strSql = "SELECT id, tipoMovimentacao, DATE_FORMAT(dataInicio, '%Y-%c-%d %H:%i:%s' ) AS 'dataInicio', DATE_FORMAT(dataFim, '%Y-%c-%d %H:%i:%s' ) AS 'dataFim', idConteiner, idCliente FROM `movimentacao` ";
-                var comando = new MySqlCommand(strSql, conexao);
-                var reader = comando.ExecuteReader();
-
+                var db = controlers.auxControler.LerDb(strSql);
+                var reader = db.Item1;
+                var conexao = db.Item2;
                 while (reader.Read())
                 {
                     movimento.Add(new Movimentacao
@@ -125,18 +107,14 @@ namespace testeClaudio.controlers
                         idCliente = reader.GetInt32(5)
                     });
                 }
-
                 conexao.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
             return movimento;
         }
-
     public static void EditarMovimentacao(string movimento, string dataInit, string dataFim, string idMovimento) 
         {
             Movimentacao movimentacao = new Movimentacao();
@@ -144,17 +122,11 @@ namespace testeClaudio.controlers
             movimentacao.dataInicio = dataInit;
             movimentacao.dataFim = dataFim;
             movimentacao.id = int.Parse(idMovimento);
+            var strSql = $"UPDATE `movimentacao` SET `tipoMovimentacao` = '{movimentacao.tipoMovimentacao}', `dataInicio` = '{movimentacao.dataInicio}', `dataFim` = '{movimentacao.dataFim}' WHERE `movimentacao`.`id` = {movimentacao.id}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"UPDATE `movimentacao` SET `tipoMovimentacao` = '{movimentacao.tipoMovimentacao}', `dataInicio` = '{movimentacao.dataInicio}', `dataFim` = '{movimentacao.dataFim}' WHERE `movimentacao`.`id` = {movimentacao.id}";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Edição Concluída");
-
             }
             catch (Exception ex)
             {
@@ -165,18 +137,11 @@ namespace testeClaudio.controlers
         {
             Movimentacao movimentacao = new Movimentacao();
             movimentacao.id = int.Parse(idMovimento);
+            var strSql = $"DELETE FROM movimentacao WHERE `movimentacao`.`id` = {movimentacao.id}";
             try
             {
-                var strConexao = "server=localhost;uid=root;database=testeclaudio";
-                var conexao = new MySqlConnection(strConexao);
-                var strSql = $"DELETE FROM movimentacao WHERE `movimentacao`.`id` = {movimentacao.id}";
-                var comando = new MySqlCommand(strSql, conexao);
-                conexao.Open();
-                comando.ExecuteNonQuery();
-                conexao.Close();
-
+                controlers.auxControler.EscreverDb(strSql);
                 MessageBox.Show("Movimentação excluída");
-
             }
             catch (Exception ex)
             {

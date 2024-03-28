@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testeClaudio.controlers;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace testeClaudio
@@ -28,10 +29,7 @@ namespace testeClaudio
 
         private void letrasConteiner_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            controlers.auxControler.OnliLetters(sender, e);
         }
 
         private void letrasConteiner_TextChanged(object sender, EventArgs e)
@@ -41,11 +39,7 @@ namespace testeClaudio
 
         private void numerosConteiner_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            controlers.auxControler.OnlyNumbers(sender, e);
         }
 
         private void label2_Click(object sender, EventArgs e)

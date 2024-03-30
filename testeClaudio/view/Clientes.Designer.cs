@@ -52,7 +52,7 @@
             listadeclientes.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listadeclientes.AutoSize = true;
             listadeclientes.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listadeclientes.Location = new Point(470, 208);
+            listadeclientes.Location = new Point(401, 204);
             listadeclientes.Name = "listadeclientes";
             listadeclientes.Size = new Size(354, 60);
             listadeclientes.TabIndex = 1;
@@ -66,12 +66,12 @@
             dataGridListaClientes.AllowUserToResizeColumns = false;
             dataGridListaClientes.AllowUserToResizeRows = false;
             dataGridListaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridListaClientes.Location = new Point(376, 304);
+            dataGridListaClientes.Location = new Point(307, 300);
             dataGridListaClientes.Margin = new Padding(3, 4, 3, 4);
             dataGridListaClientes.Name = "dataGridListaClientes";
             dataGridListaClientes.ReadOnly = true;
             dataGridListaClientes.RowHeadersWidth = 51;
-            dataGridListaClientes.Size = new Size(504, 283);
+            dataGridListaClientes.Size = new Size(525, 283);
             dataGridListaClientes.TabIndex = 2;
             dataGridListaClientes.CellContentClick += dataGridListaClientes_CellContentClick;
             // 
@@ -91,7 +91,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1071, 965);
+            ClientSize = new Size(998, 965);
             Controls.Add(editarOuExcluir);
             Controls.Add(dataGridListaClientes);
             Controls.Add(listadeclientes);

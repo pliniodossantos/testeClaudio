@@ -51,18 +51,18 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 397);
+            dataGridView1.Location = new Point(95, 400);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(735, 231);
+            dataGridView1.Size = new Size(849, 231);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // idMovimentacao
             // 
-            idMovimentacao.Location = new Point(245, 115);
+            idMovimentacao.Location = new Point(390, 117);
             idMovimentacao.Margin = new Padding(3, 4, 3, 4);
             idMovimentacao.Name = "idMovimentacao";
             idMovimentacao.ReadOnly = true;
@@ -71,7 +71,7 @@
             // 
             // idContainer
             // 
-            idContainer.Location = new Point(245, 173);
+            idContainer.Location = new Point(390, 175);
             idContainer.Margin = new Padding(3, 4, 3, 4);
             idContainer.Name = "idContainer";
             idContainer.ReadOnly = true;
@@ -80,7 +80,7 @@
             // 
             // idCliente
             // 
-            idCliente.Location = new Point(245, 232);
+            idCliente.Location = new Point(390, 234);
             idCliente.Margin = new Padding(3, 4, 3, 4);
             idCliente.Name = "idCliente";
             idCliente.ReadOnly = true;
@@ -90,7 +90,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(245, 91);
+            label1.Location = new Point(390, 93);
             label1.Name = "label1";
             label1.Size = new Size(125, 20);
             label1.TabIndex = 0;
@@ -99,7 +99,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(245, 149);
+            label2.Location = new Point(390, 151);
             label2.Name = "label2";
             label2.Size = new Size(90, 20);
             label2.TabIndex = 1;
@@ -108,7 +108,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(245, 208);
+            label3.Location = new Point(390, 210);
             label3.Name = "label3";
             label3.Size = new Size(72, 20);
             label3.TabIndex = 2;
@@ -119,7 +119,7 @@
             movimentacao.DropDownStyle = ComboBoxStyle.DropDownList;
             movimentacao.FormattingEnabled = true;
             movimentacao.Items.AddRange(new object[] { "Embarque", "Descarga", "Gate In", "Gate Out", "Reposicionamento", "Pesagem", "Scanner" });
-            movimentacao.Location = new Point(362, 115);
+            movimentacao.Location = new Point(507, 117);
             movimentacao.Margin = new Padding(3, 4, 3, 4);
             movimentacao.Name = "movimentacao";
             movimentacao.Size = new Size(159, 28);
@@ -128,7 +128,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(393, 91);
+            label4.Location = new Point(538, 93);
             label4.Name = "label4";
             label4.Size = new Size(108, 20);
             label4.TabIndex = 3;
@@ -136,7 +136,7 @@
             // 
             // dataInicio
             // 
-            dataInicio.Location = new Point(362, 173);
+            dataInicio.Location = new Point(507, 175);
             dataInicio.Margin = new Padding(3, 4, 3, 4);
             dataInicio.Name = "dataInicio";
             dataInicio.Size = new Size(159, 27);
@@ -146,7 +146,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(393, 149);
+            label5.Location = new Point(538, 151);
             label5.Name = "label5";
             label5.Size = new Size(81, 20);
             label5.TabIndex = 4;
@@ -154,7 +154,7 @@
             // 
             // dataFinal
             // 
-            dataFinal.Location = new Point(362, 232);
+            dataFinal.Location = new Point(507, 234);
             dataFinal.Margin = new Padding(3, 4, 3, 4);
             dataFinal.Name = "dataFinal";
             dataFinal.Size = new Size(159, 27);
@@ -163,7 +163,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(393, 208);
+            label6.Location = new Point(538, 210);
             label6.Name = "label6";
             label6.Size = new Size(69, 20);
             label6.TabIndex = 5;
@@ -172,7 +172,7 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(245, 271);
+            btnEdit.Location = new Point(390, 273);
             btnEdit.Margin = new Padding(3, 4, 3, 4);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(278, 31);
@@ -183,7 +183,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(245, 309);
+            btnExcluir.Location = new Point(390, 311);
             btnExcluir.Margin = new Padding(3, 4, 3, 4);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(278, 31);
@@ -196,7 +196,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 693);
+            ClientSize = new Size(1056, 693);
             Controls.Add(btnExcluir);
             Controls.Add(btnEdit);
             Controls.Add(label6);

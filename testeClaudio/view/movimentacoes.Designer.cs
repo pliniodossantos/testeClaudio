@@ -46,13 +46,14 @@
             linkLabel1 = new LinkLabel();
             dateTimePicker1 = new DateTimePicker();
             dateTimePickerFim = new DateTimePicker();
+            Home = new LinkLabel();
             SuspendLayout();
             // 
             // idConteiner
             // 
             idConteiner.DropDownStyle = ComboBoxStyle.DropDownList;
             idConteiner.FormattingEnabled = true;
-            idConteiner.Location = new Point(88, 113);
+            idConteiner.Location = new Point(223, 149);
             idConteiner.Margin = new Padding(3, 4, 3, 4);
             idConteiner.Name = "idConteiner";
             idConteiner.Size = new Size(81, 28);
@@ -61,7 +62,7 @@
             // 
             // codConteiner
             // 
-            codConteiner.Location = new Point(176, 113);
+            codConteiner.Location = new Point(311, 149);
             codConteiner.Margin = new Padding(3, 4, 3, 4);
             codConteiner.Name = "codConteiner";
             codConteiner.ReadOnly = true;
@@ -70,7 +71,7 @@
             // 
             // idCliente
             // 
-            idCliente.Location = new Point(297, 113);
+            idCliente.Location = new Point(432, 149);
             idCliente.Margin = new Padding(3, 4, 3, 4);
             idCliente.Name = "idCliente";
             idCliente.ReadOnly = true;
@@ -79,11 +80,11 @@
             // 
             // cliente
             // 
-            cliente.Location = new Point(385, 113);
+            cliente.Location = new Point(520, 149);
             cliente.Margin = new Padding(3, 4, 3, 4);
             cliente.Name = "cliente";
             cliente.ReadOnly = true;
-            cliente.Size = new Size(114, 27);
+            cliente.Size = new Size(147, 27);
             cliente.TabIndex = 10;
             // 
             // movimentacao
@@ -91,7 +92,7 @@
             movimentacao.DropDownStyle = ComboBoxStyle.DropDownList;
             movimentacao.FormattingEnabled = true;
             movimentacao.Items.AddRange(new object[] { "Embarque", "Descarga", "Gate In", "Gate Out", "Reposicionamento", "Pesagem", "Scanner" });
-            movimentacao.Location = new Point(88, 188);
+            movimentacao.Location = new Point(223, 224);
             movimentacao.Margin = new Padding(3, 4, 3, 4);
             movimentacao.Name = "movimentacao";
             movimentacao.Size = new Size(169, 28);
@@ -100,7 +101,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(88, 89);
+            label1.Location = new Point(223, 125);
             label1.Name = "label1";
             label1.Size = new Size(90, 20);
             label1.TabIndex = 0;
@@ -109,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(176, 89);
+            label2.Location = new Point(311, 125);
             label2.Name = "label2";
             label2.Size = new Size(126, 20);
             label2.TabIndex = 1;
@@ -118,7 +119,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(297, 89);
+            label3.Location = new Point(432, 125);
             label3.Name = "label3";
             label3.Size = new Size(72, 20);
             label3.TabIndex = 2;
@@ -127,7 +128,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(385, 89);
+            label4.Location = new Point(520, 125);
             label4.Name = "label4";
             label4.Size = new Size(55, 20);
             label4.TabIndex = 3;
@@ -136,7 +137,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(88, 164);
+            label5.Location = new Point(223, 200);
             label5.Name = "label5";
             label5.Size = new Size(108, 20);
             label5.TabIndex = 4;
@@ -144,7 +145,7 @@
             // 
             // horaInit
             // 
-            horaInit.Location = new Point(417, 188);
+            horaInit.Location = new Point(552, 224);
             horaInit.Margin = new Padding(3, 4, 3, 4);
             horaInit.Mask = "90:00:00";
             horaInit.Name = "horaInit";
@@ -155,7 +156,7 @@
             // 
             // horaEnd
             // 
-            horaEnd.Location = new Point(664, 188);
+            horaEnd.Location = new Point(799, 224);
             horaEnd.Margin = new Padding(3, 4, 3, 4);
             horaEnd.Mask = "90:00:00";
             horaEnd.Name = "horaEnd";
@@ -166,7 +167,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(281, 165);
+            label6.Location = new Point(416, 201);
             label6.Name = "label6";
             label6.Size = new Size(240, 20);
             label6.TabIndex = 5;
@@ -175,7 +176,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(528, 165);
+            label7.Location = new Point(663, 201);
             label7.Name = "label7";
             label7.Size = new Size(228, 20);
             label7.TabIndex = 6;
@@ -184,7 +185,7 @@
             // btnRegistrar
             // 
             btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrar.Location = new Point(88, 236);
+            btnRegistrar.Location = new Point(223, 272);
             btnRegistrar.Margin = new Padding(3, 4, 3, 4);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(290, 43);
@@ -196,7 +197,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(88, 297);
+            linkLabel1.Location = new Point(223, 333);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(219, 20);
             linkLabel1.TabIndex = 21;
@@ -208,7 +209,7 @@
             // 
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(281, 189);
+            dateTimePicker1.Location = new Point(416, 225);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(130, 27);
             dateTimePicker1.TabIndex = 12;
@@ -217,16 +218,30 @@
             // 
             dateTimePickerFim.CustomFormat = "dd/MM/yyyy";
             dateTimePickerFim.Format = DateTimePickerFormat.Custom;
-            dateTimePickerFim.Location = new Point(528, 188);
+            dateTimePickerFim.Location = new Point(663, 224);
             dateTimePickerFim.Name = "dateTimePickerFim";
             dateTimePickerFim.Size = new Size(130, 27);
             dateTimePickerFim.TabIndex = 16;
+            // 
+            // Home
+            // 
+            Home.AutoSize = true;
+            Home.Font = new Font("Segoe UI", 14.25F, FontStyle.Underline);
+            Home.LinkColor = Color.Black;
+            Home.Location = new Point(12, 9);
+            Home.Name = "Home";
+            Home.Size = new Size(152, 32);
+            Home.TabIndex = 22;
+            Home.TabStop = true;
+            Home.Text = "Página Inicial";
+            Home.LinkClicked += Home_LinkClicked;
             // 
             // movimentacoes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1034, 655);
+            Controls.Add(Home);
             Controls.Add(dateTimePickerFim);
             Controls.Add(dateTimePicker1);
             Controls.Add(linkLabel1);
@@ -246,6 +261,7 @@
             Controls.Add(codConteiner);
             Controls.Add(idConteiner);
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "movimentacoes";
             Text = "movimentacoes";
             Load += movimentacoes_Load;
@@ -273,5 +289,6 @@
         private LinkLabel linkLabel1;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePickerFim;
+        private LinkLabel Home;
     }
 }

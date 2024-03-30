@@ -25,25 +25,33 @@ namespace testeClaudio
             var lista = controlers.relatorioControler.SelecClienteEId();
             foreach (var item in lista)
             {
-                cliente.Items.Add(item.cliente+"/"+item.id_cliente);
-            }      
+                cliente.Items.Add(item.cliente + "/" + item.id_cliente);
+            }
 
         }
 
         private void cliente_DropDownClosed(object sender, EventArgs e)
-        {}
+        { }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             string[] recebeId = cliente.Text.Split('/');
-            string  receberArrayId = recebeId[1];
+            string receberArrayId = recebeId[1];
             string movimentacao = movimento.Text;
             var lista = controlers.relatorioControler.RetornarInfoGrid(movimentacao, receberArrayId);
             dataGridView1.DataSource = lista;
-            
+
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {  }
+        { }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form goToForm = new Home();
+            goToForm.Closed += (s, args) => this.Close();
+            goToForm.Show();
+        }
     }
 }

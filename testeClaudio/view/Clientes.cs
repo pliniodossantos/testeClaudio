@@ -16,11 +16,12 @@ namespace testeClaudio
         public Clientes()
         {
             InitializeComponent();
+
         }
         private void label1_Click(object sender, EventArgs e)
         {
             var goToForm = new addcliente();
-            goToForm.Show();
+            goToForm.ShowDialog();
         }
 
         private void listadeclientes_Click(object sender, EventArgs e)
@@ -37,9 +38,15 @@ namespace testeClaudio
         private void label1_Click_1(object sender, EventArgs e)
         {
             var goToForm = new editarOuExcluir();
-            goToForm.Show();
+            goToForm.ShowDialog();
         }
 
-
+        private void Home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form goToForm = new Home();
+            goToForm.Closed += (s, args) => this.Close();
+            goToForm.Show();
+        }
     }
 }

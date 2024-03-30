@@ -21,18 +21,18 @@ namespace testeClaudio
 
         private void idConteiner_DropDownClosed(object sender, EventArgs e)
         {
-            string id_Conteiner  = idConteiner.Text;
+            string id_Conteiner = idConteiner.Text;
             var recebe = controlers.movimentacaoControler.RetornarDadosPorId(id_Conteiner);
             codConteiner.Text = recebe.Item1.codigoConteiner;
             idCliente.Text = recebe.Item1.id_cliente.ToString();
             cliente.Text = recebe.Item2.cliente;
-           
-            
+
+
         }
 
         private void movimentacoes_Load(object sender, EventArgs e)
         {
-            
+
             var ids = controlers.movimentacaoControler.RetornaIdConteiner();
             foreach (var item in ids)
             {
@@ -63,8 +63,15 @@ namespace testeClaudio
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var goToForm = new editarOuExcluirMovimentacao();
-            goToForm.Show();
+            goToForm.ShowDialog();
         }
 
+        private void Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Form goToForm = new Home();
+            goToForm.Closed += (s, args) => this.Close();
+            goToForm.Show();
+        }
     }
 }

@@ -1,12 +1,67 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|c:\\users\\pln\\desktop\\dev\\testeclaudio\\testeclaudio\\testeclaudio\\view\\relatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|solutionrelative:testeclaudio\\view\\relatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeclaudio\\view\\relatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|solutionrelative:testeclaudio\\view\\relatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeclaudio\\view\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{945B7CDD-C3A2-43E5-8002-AEEB38864D2E}|testeClaudio\\testeClaudio.csproj|solutionrelative:testeclaudio\\view\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "relatorio.cs",
+              "DocumentMoniker": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\relatorio.cs",
+              "RelativeDocumentMoniker": "testeClaudio\\view\\relatorio.cs",
+              "ToolTip": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\relatorio.cs",
+              "RelativeToolTip": "testeClaudio\\view\\relatorio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T17:06:20.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "relatorio.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\relatorio.cs",
+              "RelativeDocumentMoniker": "testeClaudio\\view\\relatorio.cs",
+              "ToolTip": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\relatorio.cs [Design]",
+              "RelativeToolTip": "testeClaudio\\view\\relatorio.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T17:06:13.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\Home.cs",
+              "RelativeDocumentMoniker": "testeClaudio\\view\\Home.cs",
+              "ToolTip": "C:\\Users\\pln\\Desktop\\dev\\testeClaudio\\testeClaudio\\testeClaudio\\view\\Home.cs [Design]",
+              "RelativeToolTip": "testeClaudio\\view\\Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T16:52:20.392Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
